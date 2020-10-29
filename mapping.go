@@ -63,6 +63,30 @@ func (connector *ConnectorJira) mapDalTicketToJiraIssue(ticket domain.Ticket) (j
 			setJIField(connector, ji, backendApplicationName, ticket.ApplicationName())
 		}
 
+		if len(sord(ticket.HubProjectName())) > 0 {
+			setJIField(connector, ji, backendHubProjectName, ticket.HubProjectName())
+		}
+
+		if len(sord(ticket.HubProjectVersion())) > 0 {
+			setJIField(connector, ji, backendHubProjectVersion, ticket.HubProjectVersion())
+		}
+
+		if len(sord(ticket.ComponentName())) > 0 {
+			setJIField(connector, ji, backendComponentName, ticket.ComponentName())
+		}
+
+		if len(sord(ticket.ComponentVersion())) > 0 {
+			setJIField(connector, ji, backendComponentVersion, ticket.ComponentVersion())
+		}
+
+		if len(sord(ticket.PolicyRule())) > 0 {
+			setJIField(connector, ji, backendPolicyRule, ticket.PolicyRule())
+		}
+
+		if len(sord(ticket.PolicySeverity())) > 0 {
+			setJIField(connector, ji, backendPolicySeverity, ticket.PolicySeverity())
+		}
+
 		if len(ticket.DeviceID()) > 0 {
 			_ = ji.setCF(connector, backendDeviceID, ticket.DeviceID())
 		}

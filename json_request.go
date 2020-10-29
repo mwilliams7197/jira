@@ -111,6 +111,13 @@ type FieldList struct {
 	VendorReferences    *string     `json:"vendor_references,omitempty"`
 	Solution            *string     `json:"solution,omitempty"`
 	LastChecked         *time.Time  `json:"lastchecked,omitempty"`
+
+	HubProjectName    *string `json:"hubprojectname"`
+	HubProjectVersion *string `json:"hubprojectversion"`
+	ComponentName     *string `json:"componentname"`
+	ComponentVersion  *string `json:"componentversion"`
+	PolicyRule        *string `json:"policyrule"`
+	PolicySeverity    *string `json:"policyseverity"`
 }
 
 type updateBlock struct {

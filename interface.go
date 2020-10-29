@@ -196,6 +196,54 @@ func (connector *ConnectorJira) UpdateTicket(ticket domain.Ticket, comment strin
 				}
 			}
 
+			if len(sord(ticket.HubProjectName())) > 0 {
+				field := connector.GetFieldMap(backendHubProjectName)
+				if field != nil {
+					updateBlock.Fields.HubProjectName = ticket.HubProjectName()
+					oldToNewFieldName["hubprojectname"] = field.ID
+				}
+			}
+
+			if len(sord(ticket.HubProjectVersion())) > 0 {
+				field := connector.GetFieldMap(backendHubProjectVersion)
+				if field != nil {
+					updateBlock.Fields.HubProjectVersion = ticket.HubProjectVersion()
+					oldToNewFieldName["hubprojectversion"] = field.ID
+				}
+			}
+
+			if len(sord(ticket.ComponentName())) > 0 {
+				field := connector.GetFieldMap(backendComponentName)
+				if field != nil {
+					updateBlock.Fields.ComponentName = ticket.ComponentName()
+					oldToNewFieldName["componentname"] = field.ID
+				}
+			}
+
+			if len(sord(ticket.ComponentVersion())) > 0 {
+				field := connector.GetFieldMap(backendComponentVersion)
+				if field != nil {
+					updateBlock.Fields.ComponentVersion = ticket.ComponentVersion()
+					oldToNewFieldName["componentversion"] = field.ID
+				}
+			}
+
+			if len(sord(ticket.PolicyRule())) > 0 {
+				field := connector.GetFieldMap(backendPolicyRule)
+				if field != nil {
+					updateBlock.Fields.PolicyRule = ticket.PolicyRule()
+					oldToNewFieldName["policyrule"] = field.ID
+				}
+			}
+
+			if len(sord(ticket.PolicySeverity())) > 0 {
+				field := connector.GetFieldMap(backendPolicySeverity)
+				if field != nil {
+					updateBlock.Fields.PolicySeverity = ticket.PolicySeverity()
+					oldToNewFieldName["policyseverity"] = field.ID
+				}
+			}
+
 			if ticket.LastChecked() != nil && !ticket.LastChecked().IsZero() {
 				field := connector.GetFieldMap(backendLastChecked)
 				if field != nil {

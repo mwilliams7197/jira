@@ -38,6 +38,12 @@ var MappableFields = []string{
 	backendConfig,
 	backendLastChecked,
 	backendCloudID,
+	backendHubProjectName,
+	backendHubProjectVersion,
+	backendComponentName,
+	backendComponentVersion,
+	backendPolicyRule,
+	backendPolicySeverity,
 }
 
 const (
@@ -108,4 +114,11 @@ const (
 	backendLastChecked         = "LastChecked"
 	backendCloudID             = "CloudID"
 	backendApplicationName     = "Application Name"
+
+	backendHubProjectName    = "Hub Project Name"
+	backendHubProjectVersion = "Hub Project Version"
+	backendComponentName     = "Component Name"
+	backendComponentVersion  = "Component Version"
+	backendPolicyRule        = "Policy Rule"
+	backendPolicySeverity    = "Policy Severity"
 )

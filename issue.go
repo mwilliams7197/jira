@@ -239,6 +239,30 @@ func (ji *Issue) ApplicationName() (param *string) {
 	return ji.getStringPointer(backendApplicationName)
 }
 
+func (ji *Issue) HubProjectName() (param *string) {
+	return ji.getStringPointer(backendHubProjectName)
+}
+
+func (ji *Issue) HubProjectVersion() (param *string) {
+	return ji.getStringPointer(backendHubProjectVersion)
+}
+
+func (ji *Issue) ComponentName() (param *string) {
+	return ji.getStringPointer(backendComponentName)
+}
+
+func (ji *Issue) ComponentVersion() (param *string) {
+	return ji.getStringPointer(backendComponentVersion)
+}
+
+func (ji *Issue) PolicyRule() (param *string) {
+	return ji.getStringPointer(backendPolicyRule)
+}
+
+func (ji *Issue) PolicySeverity() (param *string) {
+	return ji.getStringPointer(backendPolicySeverity)
+}
+
 // MethodOfDiscovery gets the MethodOfDiscovery parameter from the Ticket struct
 func (ji *Issue) MethodOfDiscovery() (param *string) {
 	return ji.getStringPointer(backendMOD)
