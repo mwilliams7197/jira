@@ -247,6 +247,10 @@ func (ji *Issue) HubProjectVersion() (param *string) {
 	return ji.getStringPointer(backendHubProjectVersion)
 }
 
+func (ji *Issue) HubSeverity() (param *string) {
+	return ji.getStringPointer(backendHubSeverity)
+}
+
 func (ji *Issue) ComponentName() (param *string) {
 	return ji.getStringPointer(backendComponentName)
 }

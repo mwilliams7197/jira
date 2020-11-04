@@ -114,6 +114,7 @@ type FieldList struct {
 
 	HubProjectName    *string `json:"hubprojectname"`
 	HubProjectVersion *string `json:"hubprojectversion"`
+	HubSeverity       *string `json:"hubseverity"`
 	ComponentName     *string `json:"componentname"`
 	ComponentVersion  *string `json:"componentversion"`
 	PolicyRule        *string `json:"policyrule"`

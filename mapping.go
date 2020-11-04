@@ -71,6 +71,10 @@ func (connector *ConnectorJira) mapDalTicketToJiraIssue(ticket domain.Ticket) (j
 			setJIField(connector, ji, backendHubProjectVersion, ticket.HubProjectVersion())
 		}
 
+		if len(sord(ticket.HubSeverity())) > 0 {
+			setJIField(connector, ji, backendHubSeverity, ticket.HubSeverity())
+		}
+
 		if len(sord(ticket.ComponentName())) > 0 {
 			setJIField(connector, ji, backendComponentName, ticket.ComponentName())
 		}

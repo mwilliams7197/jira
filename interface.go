@@ -212,6 +212,14 @@ func (connector *ConnectorJira) UpdateTicket(ticket domain.Ticket, comment strin
 				}
 			}
 
+			if len(sord(ticket.HubSeverity())) > 0 {
+				field := connector.GetFieldMap(backendHubSeverity)
+				if field != nil {
+					updateBlock.Fields.HubSeverity = ticket.HubSeverity()
+					oldToNewFieldName["hubseverity"] = field.ID
+				}
+			}
+
 			if len(sord(ticket.ComponentName())) > 0 {
 				field := connector.GetFieldMap(backendComponentName)
 				if field != nil {
