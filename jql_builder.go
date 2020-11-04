@@ -64,7 +64,7 @@ func (q *Query) endGroup() *Query {
 }
 
 func (q *Query) equals(in interface{}, value string) *Query {
-	q.JQL += fmt.Sprintf("\"%s\" = %s", q.getKey(in), value)
+	q.JQL += fmt.Sprintf("\"%s\" = \"%s\"", q.getKey(in), value)
 
 	return q
 }
@@ -95,7 +95,7 @@ func (q *Query) greaterThan(in interface{}, value string) *Query {
 }
 
 func (q *Query) notEquals(in interface{}, value string) *Query {
-	q.JQL += fmt.Sprintf("\"%s\" != %s", q.getKey(in), value)
+	q.JQL += fmt.Sprintf("\"%s\" != \"%s\"", q.getKey(in), value)
 
 	return q
 }
